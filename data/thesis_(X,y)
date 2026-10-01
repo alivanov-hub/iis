@@ -17,7 +17,7 @@ In this thesis, the primary architectural unit (node $v \in V$) is a Django appl
   * **Example 2 — Loose Code-Only Edge:** $\mathbf{t}(e_{\text{users, products}}) = (1, 0, 0)$, indicating a simple Python import without direct database foreign keys or framework signal handlers.
 
 * **Graph Structure / Adjacency Matrix ($A$ or $W$):**
-  A matrix $W$ where $W_{ij}$ represents the normalized combined weight of all code calls, ORM relationships, and framework triggers connecting application $i$ to application $j$.
+  A matrix $W$ where $W_{ij} \in [0, 1]$ represents the normalized combined weight of all code calls, ORM relationships, and framework triggers connecting application $i$ to application $j$.
 
 *In the VAE-GNN architecture, the encoder takes $(X, W)$ to compress each Django app into a low-dimensional latent embedding vector $Z_i = \text{Encoder}(X_i, W)$.*
 
