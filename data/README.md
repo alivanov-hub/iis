@@ -4,7 +4,7 @@ Master Thesis , VGTU: *Research on the Application of Machine Learning in Softwa
 
 ## Target company
 
-**[Company name]**, a mid-size online school (EdTech) that teaches students through a web platform with homework, subscriptions and online payments.
+Edflix a mid-size online school (EdTech) that teaches students through a web platform with homework, subscriptions and online payments.
 
 The platform is built as a Django monolith with PostgreSQL. Over the years it has grown into many tightly coupled apps (`payments`, `fiscalization`, `subscriptions`, `homework_balancer` and others), connected through imports, ForeignKeys and SQL JOINs, Django signals and Celery tasks. This makes releases risky, slows down new features and prevents teams from working independently.
 
