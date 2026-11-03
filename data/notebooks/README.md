@@ -1,1 +1,7 @@
-Ref
+# End-to-End AI Solution: Reflection
+
+This project implements an AI agent as an end-to-end solution for decomposing Django monoliths into microservices. The agent receives input X (a module's structural features such as imports, foreign keys, Celery tasks and DRF serializers, plus its dependencies on other modules) and returns y, the microservice cluster the module should belong to. Internally it passes through data understanding, reasoning about coupling and domain semantics, inference, and output generation.
+
+Gemini (model gemini-3.5-flash, accessed via the google-genai library in Google Colab with the API key stored in Colab Secrets) was used through prompt engineering only. A zero-shot prompt classified the new module `notifications` without examples, and a few-shot prompt added known (X, y) pairs from Lab 1.2 (`payments`, `homework_balancer`) before classifying `gamification_rewards`. Both prompts produced structured, step-by-step reasoning and a final cluster name.
+
+What worked well: the model gave coherent, well-explained answers and the few-shot prompt followed the label style of the provided examples. What could be improved: outputs are free text, so a fixed JSON output format would make results easier to evaluate automatically. The model's suggestions should also be compared against the expert decomposition and the VAE-GNN results from the thesis. Finally, model names change quickly in the Gemini API, so the notebook selects the model explicitly and should be re-checked before reuse.
