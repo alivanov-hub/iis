@@ -23,7 +23,7 @@ In this thesis, the primary architectural unit (node $v \in V$) is a Django appl
 
 ## 2. Examples of $y$ (Target Labels & Microservice Boundaries)
 
-The target variable $y$ represents the desired service partitioning or cluster assignment against which models are trained, clustered, or evaluated:
+The target variable $y$ represents the desired service partitioning or cluster assignment. The VAE-GNN is trained without labels; $y$ is produced by clustering the embeddings $Z$ and evaluated against the expert decomposition $y^{\text{expert}}$.
 
 * **Categorical Cluster / Service Assignment ($y_i$):**
   A discrete label indicating which microservice cluster Django app $v_i$ belongs to:
@@ -44,3 +44,6 @@ The target variable $y$ represents the desired service partitioning or cluster a
 
 * **Ground-Truth Expert Decomposition ($y^{\text{expert}}$):**
   The benchmark decomposition created independently by domain experts based on business capabilities and Django design patterns, against which the model's outputs $\hat{y}$ are validated.
+
+
+  *Note: the numeric values and cluster names above are illustrative; the actual values are given in the thesis.*
